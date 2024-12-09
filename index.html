@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operação XOR</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            background-image: url("jackboys.jpg");
+            background-size: cover;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        input[type="number"] {
+            width: 80px;
+            padding: 5px;
+            font-size: 16px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 15px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: black;
+        }
+
+        label {
+            color: grey;
+        }
+
+        .result{
+            color: darkgreen;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Operação XOR</h2>
+    <label for="inputA">Digite o valor de A (0 ou 1):</label>
+    <input type="number" id="inputA" min="0" max="1" required>
+    <br><br>
+    <label for="inputB">Digite o valor de B (0 ou 1):</label>
+    <input type="number" id="inputB" min="0" max="1" required>
+    <br><br>
+    <button onclick="calcularXOR()">Calcular XOR</button>
+
+    <div class="result" id="resultado"></div>
+</div>
+
+<script>
+    // Função para realizar a operação XOR
+    function calcularXOR() {
+        // Pega os valores inseridos pelo usuário
+        let a = parseInt(document.getElementById('inputA').value);
+        let b = parseInt(document.getElementById('inputB').value);
+
+        // Verifica se os valores são válidos
+        if ((a === 0 || a === 1) && (b === 0 || b === 1)) {
+            // Calcula o XOR
+            let resultado = a ^ b;
+            // Exibe o resultado
+            document.getElementById('resultado').innerText = `Resultado de ${a} XOR ${b} = ${resultado}`;
+        } else {
+            document.getElementById('resultado').innerText = 'Por favor, insira 0 ou 1 em ambos os campos.';
+        }
+    }
+</script>
+
+</body>
+</html>
